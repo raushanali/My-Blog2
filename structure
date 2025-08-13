@@ -1,0 +1,20 @@
+# Create the complete project structure
+project_structure = """
+blog-app/
+├── app.js                 # Main application file
+├── package.json           # Project dependencies
+├── public/                # Static files (CSS, images, JS)
+│   ├── css/
+│   │   └── style.css      # Main stylesheet
+│   ├── js/
+│   │   └── main.js        # Client-side JavaScript
+│   └── images/            # Images directory
+├── views/                 # EJS templates
+│   ├── index.ejs          # Home page template
+│   ├── create.ejs         # Create post template
+│   ├── edit.ejs           # Edit post template
+│   └── partials/          # Reusable template components
+│       ├── header.ejs     # Header partial
+│       └── footer.ejs     # Footer partial
+└── README.md              # Project documentation
+
