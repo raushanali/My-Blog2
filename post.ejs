@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+    
+    <main>
+        <article class="post-detail">
+            <h1><%= post.title %></h1>
+            <div class="post-meta">
+                <span>By <%= post.author %></span>
+                <span>•</span>
+                <span><%= formatDate(post.createdAt) %></span>
+                <% if (post.updatedAt) { %>
+                    <span>•</span>
+                    <span>Updated: <%= formatDate(post.updatedAt) %></span>
+                <% } %>
+            </div>
+            
+            <div class="post-content">
+                <p><%= post.content %></p>
+            </div>
+            
+            <div class="post-actions">
+                <a href="/posts/<%= post.id %>/edit" class="btn btn-edit">Edit Post</a>
+                <form action="/posts/<%= post.id %>?_method=DELETE" method="POST" style="display: inline;">
+                    <button type="submit" class="btn btn-delete" onclick="return confirm('Are you sure you want to delete this post?')">Delete Post</button>
+                </form>
+                <a href="/" class="btn btn-back">← Back to All Posts</a>
+            </div>
+        </article>
+    </main>
+    
+    <%- include('partials/footer') %>
+</body>
+</html>
